@@ -1,0 +1,13 @@
+WhisperSpeech
+webdataset
+numpy
+PyPDF2
+soundfile
+langdetect
+psutil
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch
+torchvision
+torchaudio
+packaging
+moviepy

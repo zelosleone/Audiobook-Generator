@@ -1,0 +1,9 @@
+An Open Source text-to-speech system built by inverting Whisper. Previously known as spear-tts-pytorch.
+
+We want this model to be like Stable Diffusion but for speech – both powerful and easily customizable.
+
+We are working only with properly licensed speech recordings and all the code is Open Source so the model will be always safe to use for commercial applications.
+
+Currently the models are trained on the English LibreLight dataset. In the next release we want to target multiple languages (Whisper and EnCodec are both multilanguage).
+
+Sample of the synthesized voice:
