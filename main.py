@@ -29,7 +29,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {DEVICE}")
 
 CHUNK_SIZE = 1000
-SAMPLE_RATE = 44100  # Increased to CD quality
+SAMPLE_RATE = 44100
 
 def get_optimal_batch_size():
     if DEVICE == "cuda":
@@ -135,7 +135,6 @@ def convert_text_to_speech(text: str, output_path: str):
         audio = np.concatenate([chunk.cpu().numpy() for chunk in audio_chunks])
         manage_memory(audio_chunks)
         
-        # Convert to AudioArrayClip and save as MP4 with improved quality
         audio_clip = AudioArrayClip(audio.reshape(-1, 1), fps=SAMPLE_RATE)
         audio_clip.write_audiofile(
             output_path,
@@ -143,9 +142,9 @@ def convert_text_to_speech(text: str, output_path: str):
             bitrate='320k',
             ffmpeg_params=[
                 '-ar', str(SAMPLE_RATE),
-                '-ac', '2',  # Stereo output
-                '-b:a', '320k',  # High bitrate
-                '-q:a', '0',  # Highest quality
+                '-ac', '2',
+                '-b:a', '320k',
+                '-q:a', '0',
             ]
         )
         audio_clip.close()
@@ -161,7 +160,7 @@ def process_file(file_path: str):
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
         
-        output_filename = os.path.splitext(os.path.basename(file_path))[0] + '.mp4'  # Changed to .mp4
+        output_filename = os.path.splitext(os.path.basename(file_path))[0] + '.mp4'
         output_path = os.path.join(AUDIO_DIR, output_filename)
         
         print("Extracting text from file...")
