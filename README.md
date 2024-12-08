@@ -4,9 +4,7 @@ A high-quality text-to-speech converter that transforms PDF and TXT files into M
 
 ## Example Output
 
-
 https://github.com/user-attachments/assets/637660f8-7cc8-492f-b4f4-764cbbb3d9bd
-
 
 ## Features
 
@@ -43,11 +41,33 @@ https://github.com/user-attachments/assets/637660f8-7cc8-492f-b4f4-764cbbb3d9bd
 
 ## Technical Details
 
-- Auto-detects CUDA
-- Dynamic batch size optimization
-- Large document chunking
-- High-quality audio settings
-- Memory-efficient processing
+### Performance Optimizations
+
+- CUDA-aware processing with automatic GPU detection
+- Dynamic batch sizing based on available VRAM/RAM
+- Multi-threaded CPU processing for non-GPU operations
+- Memory-efficient chunking for large documents
+
+### Audio Processing
+
+- 44.1kHz sampling rate
+- 320kbps AAC encoding
+- Stereo output
+- Zero-quality loss audio settings
+
+### System Architecture
+
+- Modular pipeline design for easy model swapping
+- Buffered I/O operations (1MB buffer)
+- Automatic memory management with CUDA cache clearing
+- Fault-tolerant processing with error handling
+
+### Resource Management
+
+- Dynamic worker allocation based on system specs
+- Configurable chunk sizes (default: 2000 tokens)
+- Adaptive batch processing
+- Progressive audio concatenation
 
 ## Contributing
 
