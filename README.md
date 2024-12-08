@@ -4,9 +4,12 @@ A high-quality text-to-speech converter that transforms PDF and TXT files into M
 
 ## Example Output
 
-<audio src="./Audio/Example.mp3" controls>
-   Your browser does not support the audio element.
-</audio>
+## Example Output
+
+<video controls>
+   <source src="./Audio/Example.mp4" type="video/mp4">
+   Your browser does not support the audio or video element.
+</video>
 
 ## Features
 
