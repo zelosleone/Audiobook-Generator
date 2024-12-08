@@ -4,11 +4,6 @@ A high-quality text-to-speech converter that transforms PDF and TXT files into M
 
 ## Example Output
 
-<video controls>
-   <source src="https://github.com/zelosleone/Audiobook-Generator/raw/refs/heads/main/Audio/Example.mp4" type="video/mp4">
-   Your browser does not support the audio or video element.
-</video>
-
 ## Features
 
 - Supports PDF and TXT input files
